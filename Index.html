@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fancy Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+    }
+    .calculator {
+      max-width: 500px;
+      margin: auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+    .display {
+      background: #222;
+      color: #fff;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 20px;
+      font-size: 2.5rem;
+    }
+    .btn {
+      border-radius: 8px;
+      transition: background 0.3s;
+      height: 70px;
+      font-size: 1.5rem;
+    }
+    .btn:hover {
+      background: #ddd;
+    }
+    .btn-operator {
+      background: #f7b731;
+      color: #fff;
+    }
+    .btn-equal {
+      background: #20bf6b;
+      color: #fff;
+    }
+    .btn-clear {
+      background: #eb3b5a;
+      color: #fff;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-purple-500 to-blue-600 flex items-center justify-center min-h-screen">
+  <div class="calculator p-5">
+    <div class="display">
+      <input type="text" id="display" class="w-full bg-transparent border-none outline-none text-right text-white" readonly>
+    </div>
+    <div class="grid grid-cols-4 gap-3 p-3">
+      <button class="btn btn-clear p-4" onclick="clearDisplay()">C</button>
+      <button class="btn p-4" onclick="deleteLast()">DEL</button>
+      <button class="btn btn-operator p-4" onclick="appendValue('/')">/</button>
+      <button class="btn btn-operator p-4" onclick="appendValue('*')">*</button>
+      <button class="btn p-4" onclick="appendValue('7')">7</button>
+      <button class="btn p-4" onclick="appendValue('8')">8</button>
+      <button class="btn p-4" onclick="appendValue('9')">9</button>
+      <button class="btn btn-operator p-4" onclick="appendValue('-')">-</button>
+      <button class="btn p-4" onclick="appendValue('4')">4</button>
+      <button class="btn p-4" onclick="appendValue('5')">5</button>
+      <button class="btn p-4" onclick="appendValue('6')">6</button>
+      <button class="btn btn-operator p-4" onclick="appendValue('+')">+</button>
+      <button class="btn p-4" onclick="appendValue('1')">1</button>
+      <button class="btn p-4" onclick="appendValue('2')">2</button>
+      <button class="btn p-4" onclick="appendValue('3')">3</button>
+      <button class="btn btn-equal p-4 row-span-2" onclick="calculateResult()">=</button>
+      <button class="btn p-4 col-span-2" onclick="appendValue('0')">0</button>
+      <button class="btn p-4" onclick="appendValue('.')">.</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
